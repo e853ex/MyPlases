@@ -14,6 +14,7 @@
 		AE12124424C1AB1500822FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE12124224C1AB1500822FF4 /* LaunchScreen.storyboard */; };
 		AE12124C24C1B82B00822FF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12124B24C1B82B00822FF4 /* MainViewController.swift */; };
 		AEDB301324C5C7DC0073217D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB301224C5C7DC0073217D /* CustomTableViewCell.swift */; };
+		AEDB301524C5CEE10073217D /* PlaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB301424C5CEE10073217D /* PlaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AE12124524C1AB1500822FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE12124B24C1B82B00822FF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AEDB301224C5C7DC0073217D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AEDB301424C5CEE10073217D /* PlaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				AE12123724C1AB1300822FF4 /* AppDelegate.swift */,
 				AE12124B24C1B82B00822FF4 /* MainViewController.swift */,
+				AEDB301424C5CEE10073217D /* PlaseModel.swift */,
 				AE12123924C1AB1300822FF4 /* SceneDelegate.swift */,
 				AE12123D24C1AB1300822FF4 /* Main.storyboard */,
 				AEDB301224C5C7DC0073217D /* CustomTableViewCell.swift */,
@@ -143,6 +146,7 @@
 			files = (
 				AE12124C24C1B82B00822FF4 /* MainViewController.swift in Sources */,
 				AE12123824C1AB1300822FF4 /* AppDelegate.swift in Sources */,
+				AEDB301524C5CEE10073217D /* PlaseModel.swift in Sources */,
 				AEDB301324C5C7DC0073217D /* CustomTableViewCell.swift in Sources */,
 				AE12123A24C1AB1300822FF4 /* SceneDelegate.swift in Sources */,
 			);

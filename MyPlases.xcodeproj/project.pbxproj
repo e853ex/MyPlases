@@ -15,6 +15,7 @@
 		AE12124424C1AB1500822FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE12124224C1AB1500822FF4 /* LaunchScreen.storyboard */; };
 		AE12124C24C1B82B00822FF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12124B24C1B82B00822FF4 /* MainViewController.swift */; };
 		AE66C36D24C70E5D002F112E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66C36C24C70E5D002F112E /* StorageManager.swift */; };
+		AE683E6424C973950033EF99 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE683E6324C973950033EF99 /* RatingControl.swift */; };
 		AEDB301324C5C7DC0073217D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB301224C5C7DC0073217D /* CustomTableViewCell.swift */; };
 		AEDB301524C5CEE10073217D /* PlaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB301424C5CEE10073217D /* PlaseModel.swift */; };
 		AEDB301724C5E1190073217D /* NewPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB301624C5E1190073217D /* NewPlacesViewController.swift */; };
@@ -32,6 +33,7 @@
 		AE12124524C1AB1500822FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE12124B24C1B82B00822FF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AE66C36C24C70E5D002F112E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		AE683E6324C973950033EF99 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		AEDB301224C5C7DC0073217D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		AEDB301424C5CEE10073217D /* PlaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaseModel.swift; sourceTree = "<group>"; };
 		AEDB301624C5E1190073217D /* NewPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlacesViewController.swift; sourceTree = "<group>"; };
@@ -79,11 +81,20 @@
 				AE12123D24C1AB1300822FF4 /* Main.storyboard */,
 				AEDB301624C5E1190073217D /* NewPlacesViewController.swift */,
 				AEDB301224C5C7DC0073217D /* CustomTableViewCell.swift */,
+				AE683E6324C973950033EF99 /* RatingControl.swift */,
+				AE683E6524C9A0C30033EF99 /* New Group */,
 				AE12124024C1AB1500822FF4 /* Assets.xcassets */,
 				AE12124224C1AB1500822FF4 /* LaunchScreen.storyboard */,
 				AE12124524C1AB1500822FF4 /* Info.plist */,
 			);
 			path = MyPlases;
+			sourceTree = "<group>";
+		};
+		AE683E6524C9A0C30033EF99 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		DF0D3D3245370DABD8B5375F /* Pods */ = {
@@ -222,6 +233,7 @@
 				AE12123824C1AB1300822FF4 /* AppDelegate.swift in Sources */,
 				AEDB301524C5CEE10073217D /* PlaseModel.swift in Sources */,
 				AE66C36D24C70E5D002F112E /* StorageManager.swift in Sources */,
+				AE683E6424C973950033EF99 /* RatingControl.swift in Sources */,
 				AEDB301324C5C7DC0073217D /* CustomTableViewCell.swift in Sources */,
 				AE12123A24C1AB1300822FF4 /* SceneDelegate.swift in Sources */,
 				AEDB301724C5E1190073217D /* NewPlacesViewController.swift in Sources */,

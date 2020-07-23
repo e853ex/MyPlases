@@ -47,34 +47,35 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if isFiltering {
             return filteredPlaces.count
         }
-        return plases.isEmpty ? 0 : plases.count
+        return plases.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        var place = Place()
+
         
-        if isFiltering {
-            place = filteredPlaces[indexPath.row]
-        } else {
-            place = plases[indexPath.row]
-        }
+        let place = isFiltering ? filteredPlaces[indexPath.row] : plases[indexPath.row]
 
         cell.nameLable.text = place.name
         cell.lacationLable.text = place.location
         cell.typeLable.text = place.type
         cell.imageOfPlase.image = UIImage(data: place.imageData!)
+        cell.cosmosView.rating = place.rating
 
-        cell.imageOfPlase.layer.cornerRadius = cell.imageOfPlase.frame.size.height / 2
-        cell.imageOfPlase.clipsToBounds = true
+
 
         return cell
     }
     
  
     // MARK: Table view delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let place = plases[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
@@ -92,12 +93,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filteredPlaces[indexPath.row]
-            } else {
-                place = plases[indexPath.row]
-            }
+            
+            let place = isFiltering ? filteredPlaces[indexPath.row] : plases[indexPath.row]
+            
             let newPlaceVS = segue.destination as! NewPlacesViewController
             newPlaceVS.currentPlace = place
         }

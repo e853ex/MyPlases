@@ -9,6 +9,7 @@
 import UIKit
 import Cosmos
 
+
 class NewPlacesViewController: UITableViewController {
     
     var imageIsChanged = false
@@ -72,24 +73,24 @@ class NewPlacesViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier != "showMap" {
-            return
-        }
+        guard let identifier = segue.identifier, let mapVC = segue.destination as? MapViewController else { return }
         
-        let mapVC = segue.destination as! MapViewController
-        mapVC.place = currentPlace
+        mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
+        
+        if identifier == "showPlace" {
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = plaseImage.image?.pngData()
+        }
     }
     
     func savePlace() {
         
         
-        var image: UIImage?
+        let image = imageIsChanged ? plaseImage.image : #imageLiteral(resourceName: "imagePlaceholder")
         
-        if imageIsChanged {
-            image = plaseImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
         
         let imageData = image?.pngData()
         
@@ -186,4 +187,13 @@ extension NewPlacesViewController: UIImagePickerControllerDelegate, UINavigation
         
         dismiss(animated: true)
     }
+}
+
+
+extension NewPlacesViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+    }
+    
+    
 }

@@ -122,7 +122,7 @@
                                                         <constraint firstAttribute="width" constant="22" id="UYc-IB-A1V"/>
                                                         <constraint firstAttribute="height" constant="22" id="Wa6-s6-Vs9"/>
                                                     </constraints>
-                                                    <state key="normal" image="Placeholder"/>
+                                                    <state key="normal" image="mappin.and.ellipse" catalog="system"/>
                                                     <connections>
                                                         <segue destination="vNN-Ad-xqW" kind="presentation" identifier="getAddress" id="Esr-Fr-Xyh"/>
                                                     </connections>
@@ -192,6 +192,12 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
                                                             <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                            <color key="value" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -302,11 +308,24 @@
                                     <action selector="doneButtonPressed" destination="vNN-Ad-xqW" eventType="touchUpInside" id="77J-de-POQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3n-eq-RIj">
+                                <rect key="frame" x="182" y="626" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="004-0d-WWu"/>
+                                    <constraint firstAttribute="width" constant="50" id="ROS-Kh-pqm"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="vNN-Ad-xqW" eventType="touchUpInside" id="J7a-AZ-Agx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fec-jJ-mok" firstAttribute="top" secondItem="7vw-9T-9sc" secondAttribute="top" constant="40" id="0ad-3l-vE6"/>
+                            <constraint firstItem="7vw-9T-9sc" firstAttribute="bottom" secondItem="b3n-eq-RIj" secondAttribute="bottom" constant="40" id="0qX-I5-g4V"/>
                             <constraint firstItem="7vw-9T-9sc" firstAttribute="trailing" secondItem="i7H-88-nu7" secondAttribute="trailing" constant="40" id="6T1-B0-RDJ"/>
+                            <constraint firstItem="b3n-eq-RIj" firstAttribute="centerX" secondItem="t3i-2g-lGY" secondAttribute="centerX" id="AbQ-fX-bhH"/>
                             <constraint firstItem="F0E-kF-KjF" firstAttribute="centerX" secondItem="t3i-2g-lGY" secondAttribute="centerX" id="Gmj-i3-Hjp"/>
                             <constraint firstItem="cyV-yy-n6J" firstAttribute="bottom" secondItem="7vw-9T-9sc" secondAttribute="bottom" id="JX4-Vw-zH7"/>
                             <constraint firstItem="cyV-yy-n6J" firstAttribute="leading" secondItem="7vw-9T-9sc" secondAttribute="leading" id="Nsv-rr-jqR"/>
@@ -326,6 +345,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="sZU-MZ-4Fz" id="XtA-5f-xLN"/>
                         <outlet property="doneDutton" destination="F0E-kF-KjF" id="C11-bE-6uT"/>
+                        <outlet property="goButton" destination="b3n-eq-RIj" id="mIg-hV-8Lo"/>
                         <outlet property="mapPinImage" destination="z1f-QJ-Dqg" id="orj-Kx-JvK"/>
                         <outlet property="mapView" destination="cyV-yy-n6J" id="8Tu-XQ-Nax"/>
                     </connections>
@@ -412,8 +432,14 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                             <real key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="highlightedStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star" catalog="system"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                            <color key="value" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -513,13 +539,14 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="30" height="30"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
         <image name="Pin" width="40" height="40"/>
-        <image name="Placeholder" width="20" height="20"/>
         <image name="cancel" width="128" height="128"/>
-        <image name="emptyStar" width="255" height="256"/>
-        <image name="filledStar" width="237.5" height="238"/>
+        <image name="highlightedStar" width="237.5" height="238"/>
         <image name="map" width="50" height="50"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>
